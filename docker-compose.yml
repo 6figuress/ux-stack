@@ -1,0 +1,32 @@
+services:
+  backend:
+    image: dij0s/wrapper:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    image: dij0s/ui:latest
+    ports:
+      - "8888:8888"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  app-network:
+    driver: bridge
