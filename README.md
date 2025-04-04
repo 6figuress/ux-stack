@@ -57,3 +57,6 @@ docker compose up -d
 ```bash
 docker compose ps
 ```
+
+## Extra
+The generated models are stored and accessible hereafter [notion.so](https://false-mascara-f9c.notion.site/Lobby-1af63c940e23804ca1c9ed172dedd2b8).
